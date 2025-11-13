@@ -28,4 +28,10 @@ export class AuthController {
   return { message: 'Login successful' };
 }
 
+@Post('/logout')
+@HttpCode(200)
+logout(@Res({ passthrough: true }) res: Response) {
+  res.clearCookie('ecommerceToken');
+  return { message: 'Logout successful' };
+}
 }

@@ -9,7 +9,7 @@ export class PaymentsService {
       
         const query = await this.prisma.product.findUnique({ where: {id}, select: { quantity: true, userId: true} });
         if (!query) throw new NotFoundException('Product not found');
-        if (query.userId === userId) throw new BadRequestException("You can not buy your own products");
+        if (query.userId === userId) throw new BadRequestException("You cannot buy your own products");
 
         const result = query.quantity - quantityToBuy
         if (quantityToBuy > query.quantity) throw new BadRequestException('Not enough quantity');

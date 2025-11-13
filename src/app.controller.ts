@@ -1,5 +1,5 @@
 
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { AppService } from './app.service';
 import { CreateUserDto } from './auth/dto/create-user.dto';
 /* istambul ignore file */
@@ -8,8 +8,8 @@ import { CreateUserDto } from './auth/dto/create-user.dto';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Post()
-  regiter(@Body() createUserDto: CreateUserDto) {
+  @Get()
+  register(@Body() createUserDto: CreateUserDto) {
     return console.log(createUserDto);
   }
 }
