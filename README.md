@@ -23,7 +23,21 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+<h2>Technologies Used</h2>
+
+<p>This project is built using a modern stack designed for scalability, maintainability, and developer productivity:</p>
+
+<ul>
+  <li>🧠 <strong>TypeScript</strong> – Strongly typed language that enhances code quality and tooling</li>
+  <li>🚀 <strong>NestJS</strong> – Progressive Node.js framework for building efficient server-side applications</li>
+  <li>🛢️ <strong>PostgreSQL</strong> – Robust relational database for structured data storage</li>
+  <li>🔍 <strong>Prisma</strong> – Type-safe ORM for database access and migrations</li>
+  <li>📦 <strong>Docker</strong> – Containerization for consistent development and deployment environments</li>
+  <li>📘 <strong>Swagger</strong> – Auto-generated API documentation available at <a href="http://localhost:3000/api" target="_blank"><code>/api</code></a></li>
+</ul>
+
+<p>Swagger is integrated to provide a live, interactive view of all available endpoints. You can explore request/response formats, authentication flows, and test endpoints directly from the browser.</p>
+
 
 ## Project setup
 
