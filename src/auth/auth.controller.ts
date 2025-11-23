@@ -3,7 +3,6 @@ import { AuthService } from './auth.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { loginUserDto } from './dto/login-user.dto';
 import type { Response } from 'express';
-import { max } from 'class-validator';
 
 @Controller('auth')
 @UsePipes(new ValidationPipe({ whitelist: true, forbidNonWhitelisted: true }))
@@ -11,9 +10,9 @@ import { max } from 'class-validator';
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
   @Post()
-  register(@Body() createUserDto: CreateUserDto) {
-    const data = this.authService.register(createUserDto);
-    return data;
+  async register(@Body() createUserDto: CreateUserDto) {
+    const data = await this.authService.register(createUserDto);
+    return 'User registered successfully';
   }
   @Post('/login')
   @HttpCode(200)
@@ -25,7 +24,7 @@ export class AuthController {
   if (!token) throw new NotFoundException('Wrong credentials');
 
   res.cookie('ecommerceToken', token, { httpOnly: true});
-  return { message: 'Login successful' };
+  return { message: 'User logged successfully' };
 }
 
 @Post('/logout')
