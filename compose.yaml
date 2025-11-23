@@ -12,12 +12,14 @@ services:
     build:
       context: .
     environment:
-      NODE_ENV: production
+      NODE_ENV: development
     ports:
       - 3000:3000
     depends_on:
       - db
     command: sh -c "npx prisma migrate deploy && npm run start:dev"
+    env_file:
+    - .env.docker
 
   redis:
     image: redis
@@ -37,6 +39,7 @@ services:
       POSTGRES_PASSWORD: admin
       POSTGRES_DB: users
     
+
 
   
 
